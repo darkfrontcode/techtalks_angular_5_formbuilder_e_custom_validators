@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="submit(form)" novalidate>
+	<input class="form-control" formControlName="name" placeholder="name">
+	<input type="number" class="form-control" formControlName="age" placeholder="age">
+	<button *ngIf="form.valid">Submit</button>
+</form>
+
+<p>Form value: {{ form.value | json }}</p>
+<p>Form status: {{ form.status | json }}</p>
+<p>Form errors: {{ form.errors | json }}</p>
+
+<pre>Name errors: {{ form.get('name').errors | json }}</pre>
+<pre>Age errors: {{ form.get('age').errors | json }}</pre>
